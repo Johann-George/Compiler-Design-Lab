@@ -27,15 +27,15 @@
 %}
 
 %%
-    "int"|"float"|"double"|"if"|"else"|"char"|"void"|"main"|"printf" {printf("\n<keyword,%s>",yytext);}
-    [a-zA-Z_][a-zA-Z0-9_]* {identifier(yytext);}
-    ["][a-zA-Z0-9 ][a-zA-Z0-9 ]*["] {printf("\n<string,%s>",yytext);}
-    [0-9]+ {printf("\n<number,%s>",yytext);}
-    "+"|"-"|"*"|"/"|"<"|">"|"<="|">="|"=="|"!=" {printf("\n<operator,%s>",yytext);}
-    ","|"."|"("|")"|";"|"="|"{"|"}" {printf("\n<symbol,%s>",yytext);}
-    [ \t] {;}
-    [\n] {;}
-    . {printf("\nInvalid tokens");}
+"int"|"float"|"double"|"if"|"else"|"char"|"void"|"main"|"printf" {printf("\n<keyword,%s>",yytext);}
+[a-zA-Z_][a-zA-Z0-9_]* {identifier(yytext);}
+["][a-zA-Z0-9 ][a-zA-Z0-9 ]*["] {printf("\n<string,%s>",yytext);}
+[0-9]+ {printf("\n<number,%s>",yytext);}
+"+"|"-"|"*"|"/"|"<"|">"|"<="|">="|"=="|"!=" {printf("\n<operator,%s>",yytext);}
+","|"."|"("|")"|";"|"="|"{"|"}" {printf("\n<symbol,%s>",yytext);}
+[ \t] {;}
+[\n] {;}
+. {printf("\nInvalid tokens");}
 %%
 
 void main(){
