@@ -4,8 +4,10 @@
 %}
 
 %%
-[a,e,i,o,u,A,E,I,O,U]   {v++;}
-[^ \t\n]                {c++;}
+[aeiouAEIOU]   {v++;}
+[a-zA-Z]       {c++;}
+[ \t]+          {;}
+.|\n        {return 0;}
 %%
 
 int main(){
