@@ -167,3 +167,24 @@ int main() {
     }
     return 0;
 }
+/*OUTPUT
+Enter productions (end with empty line):
+Format: S -> ACB|Cbb|Ba
+S->ACB|Cbb|Ba
+A->da|BC
+B->g|E
+C->h|E
+
+
+FIRST sets:
+FIRST(S) = { d, g, h, Є, b, a }
+FIRST(A) = { d, g, h, Є }
+FIRST(B) = { g, Є }
+FIRST(C) = { h, Є }
+
+FOLLOW sets:
+FOLLOW(S) = { $ }
+FOLLOW(A) = { h, g, $ }
+FOLLOW(B) = { $, a, h, g }
+FOLLOW(C) = { g, $, b, h }
+*/
